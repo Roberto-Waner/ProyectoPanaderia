@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body { /*Formato de letras en general*/
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+/* ------------------------estilo a la sesion de productos------------------------- */
+/* en la parte de la section */
+.seccion-Producto{
+    background-color: rgba(245, 229, 204, 1);
+}
+/* parte del menu de la .seccion-Producto */
+.titulo-seccion{
+    padding:  1% 90px 0% 90px;
+}
+
+.botonera-categorias{
+    display: flex;
+    justify-content: center;
+    gap: 30px; /*creando un espacio entre los elementos hijos del contenedor.*/
+}
+
+.menu-seccion{
+    text-decoration: none; /* Esto quita las líneas */
+    color: inherit; /* Esto hace que el color sea el mismo que el del texto circundante */
+}
+
+/* estilo del div "container-Producto" */
+.container-Producto {
+    display: flex; /*convierte el contenedor en un contenedor flex, lo que permite usar otras propiedades de Flexbox.*/
+    flex-wrap: wrap; /*permite que los elementos se ajusten en múltiples líneas si no hay suficiente espacio en una sola línea.*/
+    justify-content: space-between; /*distribuye los elementos de manera uniforme en la línea. El espacio entre los elementos y alrededor de ellos es el mismo.*/
+    padding: 80px;
+}
+
+/* en la parte de article */
+.producto{
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0px 16px 50px 16px; /*deteminar el ancho del interiol de article en diferentes angulos*/
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* parte del logo  */
+.figura{
+    position: absolute;
+    background-color: rgba(255, 123, 49, 1);
+    width: 71px;
+    height: 32px;
+    overflow: hidden;   /*para ocultar cualquier contenido que sobresalga del contedor*/
+    margin-left: 180px;
+    z-index:  1;  /*posicion en el stack de capas*/
+    border-radius: 0% 0% 40% 40%; /* Los valores son para las esquinas superior izquierda, superior derecha, inferior derecha e inferior izquierda, respectivamente */
+    padding-top: 95px;
+}
+
+.contenedor-logo{
+    width: 65% ;
+    height: 5%;
+    overflow: hidden;
+    margin-left: 183px;
+}
+
+.contenedor-logo .logo {
+    position: absolute;
+    z-index: 1; /*para que el logo este en primer lugar*/
+    border-radius: 100%;
+    width: 65px;
+    height: 65px;
+    object-fit: cover; /*para que se ajuste el tamaño segun su contenedor*/
+    margin-top: 60px;
+}
+
+
+/* parte del la imagen del producto */
+.contenedor-imagen{ /*se esta estableciendo un limite a la etiqueta "div" de la imagen dentro de la etiqueta article*/
+    width: 280px;
+    height: 280px;
+    border-radius: 40px;
+    overflow: hidden; /*para ocultar cualquier contenido que sobresalga del tamaño de su contenedor*/
+    position: relative;
+}
+
+.contenedor-imagen .imagen{
+    width: 320px;
+    height: 320px;
+    object-fit: cover; /*para que se ajuste el tamaño segun su contenedor*/
+}
+
+/* //////////////////////////////////////////////section de contactos///////////////////////////////////////////////////////// */
+.seccion-contactos{
+    background-color: rgba(239, 214, 185, 1);
+}
+
+.contenedor-informacion{
+    display: flex; /*convierte el contenedor en un contenedor flex, lo que permite usar otras propiedades de Flexbox.*/
+    flex-wrap: wrap; /*permite que los elementos se ajusten en múltiples líneas si no hay suficiente espacio en una sola línea.*/
+    padding: 90px;
+}
+
+.mapa{
+    width: 600px;
+    height: 600px;
+    border: 0;
+}
+
+.contenedor-Redes{
+    position: relative;
+    width: 65px;
+    height: 65px;
+    margin: 0 0 0 90px;
+}
+
+.contenido-imagen{
+    position: relative;
+    margin-left: 90px;
+}
+
+.img-pan1, .img-pan2{
+    position: absolute;
+}
+
+.img-pan1 {
+    z-index: 1;
+    width: 350px;
+    height: 490px;
+}
+
+.img-pan2 {
+    margin-top: 100px;
+    margin-left: 100px;
+    z-index: 2;
+    width: 350px;
+    height: 490px;
+}
+
+/* ///////////////////////////////////////////////////////Footer//////////////////////////////////////////////////////////// */
+footer{
+    padding: 30px;
+    background-color: rgba(245, 229, 204, 1);
+    display: flex;
+    gap:  20px;
+    justify-content: center;
+}
+
+#current-time{
+    margin-left: 40px;
+}
+
+/* ////////////////////////////////////////////"div de ventana"//////////////////////////////*/
+.ventana{
+    position: fixed; /* Hace que la ventana sea flotante */
+    top: 50%; /* Centra la ventana verticalmente */
+    left: 50%; /* Centra la ventana horizontalmente */
+    width: 300px;
+    min-height: 250px;
+    transform: translate(-50%, -50%); /* Ajusta la ventana para que esté centrada */
+    z-index: 999; /* Asegura que la ventana esté por encima de otros elementos */
+    border: 1px solid #000; /* Agrega un borde a la ventana */
+    border-radius: 10%; /* Redondea los bordes de la ventana */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5); /* Agrega una sombra a la ventana */
+    background-color: rgba(232, 232, 232, 1); /* Establece el color de fondo de la ventana */
+    padding: 80px; /* Establece el espacio entre el contenido y el borde superior de la ventana */
+    /* display: none; */
+}
+
+.ventana-contenedor-imagen{
+    width: 280px;
+    height: 280px;
+    border-radius: 40px;
+    overflow: hidden; /*para ocultar cualquier contenido que sobresalga del tamaño de su contenedor*/
+    position: relative;
+}
+
+.ventana-contenedor-imagen .ventana-imagen{
+    width: 320px;
+    height: 320px;
+    object-fit: cover; /*para que se ajuste el tamaño segun su contenedor*/
+}
