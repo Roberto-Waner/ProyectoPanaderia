@@ -1,0 +1,185 @@
+/*esta secuencia de código establece la familia de fuentes y el modo de cálculo del ancho y alto de los elementos en la página web, 
+y asegura que todos los elementos hereden esta configuración.*/
+
+html{
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+*,
+*:before,       
+*:after{
+    box-sizing: inherit;
+}
+
+/*------------------------------------------------------------------------Lo del footer------------------------------------------------------*/
+
+/* en la parte del "div" */
+/* Estilo para el contenedor de fondo */
+.fondo{    
+    background-color: rgba(35, 34, 35, 0.7); /* Color de fondo con opacidad */
+    display: flex;
+    justify-content: space-around; /* Espacio entre los artículos */
+    align-items: center; /* Centramos verticalmente los artículos */
+    padding: 20px;
+    position: relative; /* Para contexto de posicionamiento relativo */
+}
+
+img{ /*para la imagen del fondo (Recuerda cambiarlos)*/
+    position: absolute;
+    width: 100%; 
+    height: 75%; 
+    object-fit: cover; 
+    z-index: 1;
+}
+
+/* Estilo para los artículos */
+.vista {
+    margin: 10px;
+    padding: 15px;
+    background-color: rgba(11, 11, 11, 0.671); /* Fondo semi-transparente */
+    width: 400px; /* Ajustamos el ancho */
+    height: auto; /* Ajustamos la altura */
+    text-align: center; /* Centrar texto */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+    position: relative; /* Necesario para contexto de posición relativa */
+    z-index: 2; /*Asegura que el artículo esté por encima del fondo*/
+}
+
+/* Estilos a los encabezado h2 */
+.Encabezados {
+    color: rgb(237, 153, 27); 
+    font-weight: bold;
+}
+
+/* Le linea que esta debajo de .Encabezados h2 */
+.underline{
+    width: 95%;
+    height: 8px;
+    background: rgba(142, 141, 140, 0.768);
+    border-radius: 3px;
+    position: absolute;
+    top: 65px;
+    left: 10px;
+    overflow: hidden;
+}
+
+/* aqui se crea una pequeña masa que ira moviendoce infinitamente adentro del ¨div¨ .underline */
+.underline span{
+    width: 15px;
+    height: 100%;
+    background: rgb(247, 183, 88);
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    animation: moving 2s linear infinite;
+}
+
+@keyframes moving {
+    0%{
+        left: -20px;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+/* Estilos para los Encabezados del h4 */
+.titulos { 
+    color: rgb(229, 165, 70);
+    font-weight: bold; /*permite especificar el grosor de la fuente y tiene varios valores posibles*/
+}
+
+/* Estilos para los parrafos */
+.parrafos{
+    color: rgb(255, 253, 253);
+}
+
+/* Estilo para los iconos SVG */
+svg {
+    width: 50px;
+    height: 50px;
+    fill: white; /* Color de los iconos */
+    margin: 10px; /* Margen entre iconos */
+}
+
+/* Estilo para los enlaces de redes sociales */
+.datos-redes a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.Copyright{ /*para el cuadro del copyright*/
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(11, 11, 11, 0.671);
+    box-shadow: 50px 0 0 rgba(0, 0, 0, 0.3);
+    bottom: -21.50%;
+}
+
+/* para el .parrafos de cuadro de .Copyright */
+.texto{
+    color: rgb(237, 153, 27); 
+    text-align: center; /* Centrar texto */
+    font-size: 20px; /*Tamaño de la fuente*/
+}
+
+/* Esto se encargar de hacer que los SVG se prendan con multiples box-shadows */
+.facebook:hover{ 
+    background-color: blue;
+    fill: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px blue,
+                0 0 45px blue,
+                0 0 75px blue,
+                0  0 115px blue;
+}
+
+.instagram:hover{
+    background-color: rgb(255, 149, 0);
+    fill: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgb(255, 149, 0),
+                0 0 45px rgb(255, 149, 0),
+                0 0 75px rgb(255, 149, 0),
+                0  0 115px rgb(255, 149, 0);
+}
+
+.whatsapp:hover{
+    background-color: rgb(7, 246, 31);
+    fill: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgb(7, 246, 31),
+                0 0 45px rgb(7, 246, 31),
+                0 0 75px rgb(7, 246, 31),
+                0  0 115px rgb(7, 246, 31);
+}
+
+/* ----------------------------------------responsive----------------------- */
+
+@media (max-width: 700px){
+    .fondo{
+        display: block;
+    }
+
+    .vista{
+        width: 350px;
+    }
+
+    .mapa{
+        width: 320px;
+    }
+
+    img{
+        width: 100%; 
+        height: 130%;
+        object-fit: cover; 
+    }
+
+    .Copyright{ 
+        bottom: -70.50%;
+    }
+}
